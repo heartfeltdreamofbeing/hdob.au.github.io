@@ -571,19 +571,3 @@ h4 {
     background-color: indianred;
 }
 
-/*MEDIA QUERIES*/
-
-/*phone*/
-@media (max-width: 480px){
-    table th, table th{
-        min-width: auto;
-    }
-}
-
-/*tablet*/
-
-@media (max-width: 768px) {
-    table th, table th{
-        min-width: auto;
-    }
-}
