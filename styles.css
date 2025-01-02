@@ -574,7 +574,7 @@ h4 {
 /*MEDIA QUERIES*/
 
 /*phone*/
-@media screen and (max-width: 480px){
+@media (max-width: 480px){
     table th, table th{
         min-width: auto;
     }
@@ -582,7 +582,7 @@ h4 {
 
 /*tablet*/
 
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
     table th, table th{
         min-width: auto;
     }
