@@ -1,0 +1,372 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+    --main: #dfd1fa;
+    --text: #3c2348;
+    --primary: #f1c15f;
+    --secondary: #8c17a1;
+    --accent: #890101;
+    --widthNHeightSlider: 200px;
+    --sliderQuantity: 10;
+    --inter: "Inter", sans-serif;
+    --boxShadow: 0px 0px 15px 0px rgba(0,0,0,0.65);
+}
+
+.darkMode {
+    --main: #13052e;
+    --text: #d0b7dc;
+    --primary: #a06f0e;
+    --secondary: #d35ee8;
+    --accent: #fe7676;
+    --boxShadow: 0px 0px 15px 0px rgba(255, 255, 255, 0.65);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--main);
+    transition: 0.5s;
+}
+
+
+.navBar {
+    background-color: var(--primary);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid var(--text);
+    transition: 0.5s;
+}
+
+.navBarLink {
+    float: left;
+    display: block;
+    color: var(--text);
+    text-align: center;
+    padding: 10px;
+    margin: 7px;
+    text-decoration: none;
+    font-family: var(--inter);
+    font-weight: 600;
+    text-transform: lowercase;
+    font-size: 1.2rem;
+}
+
+.navBarLink i {
+    padding: 5px;
+    font-size: 0.8rem;
+}
+
+.navBarLink:hover {
+    font-weight: 1000;
+}
+
+.navBarLinkActive {
+    font-weight: 1000;
+    border: 2px solid var(--text);
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.navBarLink.hamburgerIcon {
+    display: none;
+}
+
+.dpNavBarContent {
+    display: none;
+    position: absolute;
+    background-color: var(--secondary);
+    min-width: 275px;
+    z-index: 1;
+    border-radius: 10px;
+    border: 2px solid var(--text);
+}
+
+.dpNavBarLink {
+    float: none;
+    color: var(--main);
+    padding: 7px 20px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    border-bottom: 1px solid var(--text);
+}
+
+.dpNavBarLink:last-child {
+    border: 0;
+}
+
+.dropdownNavBar:hover .dpNavBarContent {
+    display: block;
+    font-weight: normal;
+}
+
+.dpNavBarLink:hover {
+    font-weight: 600;
+}
+
+.darkModeIcon, .lightModeIcon {
+    font-size: 1.2rem;
+    transform: scale(2);
+    transform-origin: 50% 50%;
+    float: right;
+    position: absolute;
+    right: 50px;
+    top: -2px;
+}
+
+.textMobile {
+    display: none;
+}
+
+.aboutHome{
+    display: flex;
+    padding: 50px;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.logoSvg {
+    min-width: 10%;
+}
+
+.svgLogoColour {
+    fill: var(--text);
+}
+
+.homeCircleDivider {
+    background-color: var(--text);
+    min-width: 7px;
+    min-height: 7px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.homeText {
+    color: var(--text);
+    font-family: var(--inter);
+}
+
+.homeHeading {
+    font-size: 2.5rem;
+}
+
+.homeSubHeading {
+    font-size: 1.35rem;
+    font-style: italic;
+    padding-bottom: 10px;
+}
+
+.homeParagraph {
+    font-size: 1.2rem;
+}
+
+.squareSlider {
+    width: 100%;
+    height: var(--widthNHeightSlider);
+    overflow: hidden;
+}
+
+.sliderList {
+    display: flex;
+    min-width: calc(var(--widthNHeightSlider) * var(--sliderQuantity));
+    position: relative;
+}
+
+
+.sliderItem {
+    width: var(--widthNHeightSlider);
+    height: var(--widthNHeightSlider);
+    position: absolute;
+    left: 100%;
+    animation: autoRun 10s linear infinite;
+    animation-delay: calc((10s / var(--sliderQuantity)) * (var(--sliderPosition) - 1));
+    transition: 1s;
+    border-radius: 20px;
+}
+
+.sliderItem img{
+    width: 100%;
+}
+
+@keyframes autoRun {
+    from {
+        left: 100%;
+    }
+    
+    to {
+        left: calc(var(--widthNHeightSlider) * -1);
+    }
+}
+
+.squareSlider:hover .sliderItem {
+    animation-play-state: paused!important;
+    filter: grayscale(1);
+}
+
+.squareSlider .sliderItem:hover {
+    filter: grayscale(0);
+}
+
+
+.title {
+    font-family: var(--inter);
+    color: var(--accent);
+    text-align: center;
+    padding: 20px;
+    font-size: 3rem;
+}
+
+.quoteBox {
+    border: 2px solid var(--text);
+    border-radius: 100px;
+    padding: 10px 50px;
+    margin: 0 auto;
+    width: fit-content;
+    background-color: var(--primary);
+    -webkit-box-shadow: var(--boxShadow);
+    -moz-box-shadow: var(--boxShadow);
+    box-shadow: var(--boxShadow);
+
+}
+
+.quote {
+    font-family: var(--inter);
+    text-align: left;
+    color: var(--text);
+    padding: 0 20px;
+    font-size: 1.25rem;
+}
+
+.subTitle {
+    font-family: var(--inter);
+    padding: 10px 25px;
+    font-size: 2rem;
+    color: var(--text);
+}
+
+.contentText {
+    padding: 0 30px;
+    font-family: var(--inter);
+    color:var(--text);
+    font-size: 1rem;
+    text-align: justify;
+}
+
+#applyMainText {
+    fill: var(--text);
+}
+
+#lines {
+    stroke: var(--text);
+}
+
+#timelineSvg {
+    padding: 10px;
+    display: block;
+    margin: 0 auto;
+}
+
+.EACListItems {
+    padding-bottom: 10px;
+}
+
+
+@media screen and (max-width: 750px) {
+    .navBar {
+        display: block;
+    }
+
+    .navBarLink:hover {
+        font-weight: 600;
+    }
+
+    .navBarLink:not(.navBarLinkActive) {
+        display: none;
+    }
+
+    .navBarLinkActive {
+        border: 0;
+        color: var(--accent);
+    }
+
+    .navBarLink.hamburgerIcon {
+        float: right;
+        display: block;
+    }
+
+    .navBar.openNavBar {
+        position: relative;
+    }
+
+    .navBar.openNavBar .navBarLink.hamburgerIcon {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .navBar.navBar.openNavBar .navBarLink {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+
+    .navBar.openNavBar .navBarLink.lightModeIcon, .navBar.openNavBar .navBarLink.darkModeIcon {
+        display: none;
+    }
+
+    .aboutHome {
+        display: none;
+    }
+
+    .textMobile {
+        display: block;
+        font-family: "Inter", sans-serif;
+        padding: 10px;
+        font-size: 2rem;
+        text-align: center;
+        color: var(--text);
+    }
+
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .quoteBox {
+        padding: 10px;
+    }
+
+
+    .quote {
+        font-size: .75rem;
+    }
+
+    .subTitle {
+        font-size: 1rem;
+        padding-top: 25px;
+    }
+
+    .contentText {
+        font-size: .75rem;
+    }
+
+    #timelineSvg {
+        width: 75%;
+        height: 1%;
+    }
+
+    .EACListItems {
+        padding-bottom: 5px;
+    }
+}
+
+
+.hide {
+    display: none;
+}

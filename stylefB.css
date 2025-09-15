@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+:root {
+    --backgroundColor: #1c3327;
+    --mainTextColor: #c7ddd1;
+    --mainTextFontFamily: "Inter", sans-serif;
+    --headingFontFamily: "Bebas Neue", sans-serif;
+    --mainTextFontSize: 1rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--backgroundColor);
+    color: var(--mainTextColor);
+    font-family: var(--mainTextFontFamily);
+    font-size: var(--mainTextFontSize);
+}
+
+h1 {
+    font-family: var(--headingFontFamily);
+    font-size: 10rem;
+    color: var(--mainTextColor);
+    font-weight: normal;
+    padding-left: 2%;
+}
+
+@media screen and (max-width: 750px) {
+    h1 {
+        font-size: 4.5rem;
+        text-align: center;
+        padding: 0;
+        
+    }
+
+}
